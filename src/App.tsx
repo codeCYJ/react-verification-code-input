@@ -2,6 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 
 const CODE_LENGTH = 5;
+
 const App = () => {
   const [codes, setCodes] = useState("");
 
@@ -33,7 +34,6 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
   margin: 200px 0;
 `;
 
@@ -41,21 +41,20 @@ const Box = styled.div`
   display: flex;
   justify-content: center;
   gap: 6px;
-  margin: 30px 0 20px;
+  margin: 30px 0 10px;
 `;
 
 const Display = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 60px;
   height: 76px;
-  border: 1px solid #dedfdf;
+  border: 1px solid #e0e0e0;
   border-radius: 10px;
   font-weight: 700;
   font-size: 32px;
   color: #2e2e2e;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 `;
 
 const Input = styled.input`
@@ -74,7 +73,6 @@ const Input = styled.input`
 
 const Validation = styled.p<{ color?: string }>`
   font-weight: 500;
-  margin-top: 16px;
   color: ${({ color }) => (color ? color : "#1eba66")};
 `;
 
