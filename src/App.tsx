@@ -21,11 +21,10 @@ const App = () => {
         />
       </Box>
       {codes.length >= CODE_LENGTH ? (
-        <div className="flex gap-3 mt-4 text-[#1EBA66]">Code correct</div>
+        <Validation>Code correct</Validation>
       ) : (
-        <div className="flex gap-3 mt-4 text-reanalyze">Code uncorrect</div>
+        <Validation color="#ff5a60">Code uncorrect</Validation>
       )}
-      <Button>Next</Button>
     </Container>
   );
 };
@@ -77,37 +76,10 @@ const Input = styled.input`
   caret-color: black;
 `;
 
-const InputText = styled.input`
-  border: 1px solid #dedfdf;
-  border-radius: 10px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  padding: 0 12px;
-  width: 100%;
-`;
-
-const Input2 = styled(InputText)`
-  margin-top: 8px;
-  height: 44px;
-  border: 1px solid #f1f1f1;
-  ::-webkit-input-placeholder {
-    color: #dedfdf;
-  }
-  ::-ms-input-placeholder {
-    color: #dedfdf;
-  }
-`;
-
-const Button = styled.button`
-  width: 255px;
-  padding: 12px;
-  background: #2e2e2e;
-  border-radius: 10px;
-  font-weight: 700;
-  font-size: 16px;
-  color: #ffffff;
-  margin-top: 36px;
+const Validation = styled.p<{ color?: string }>`
+  font-weight: 500;
+  margin-top: 16px;
+  color: ${({ color }) => (color ? color : "#1eba66")};
 `;
 
 export default App;
