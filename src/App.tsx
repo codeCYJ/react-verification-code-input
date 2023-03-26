@@ -7,7 +7,7 @@ const App = () => {
 
   return (
     <Container>
-      <Title>Verification Code</Title>
+      <h1>Verification Code</h1>
       <Box>
         {Array(CODE_LENGTH)
           .fill(0)
@@ -37,17 +37,11 @@ const Container = styled.div`
   margin: 200px 0;
 `;
 
-const Title = styled.h1`
-  margin: 32px auto;
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 100%;
-`;
-
 const Box = styled.div`
   display: flex;
   justify-content: center;
   gap: 6px;
+  margin: 30px 0 20px;
 `;
 
 const Display = styled.div`
@@ -74,6 +68,8 @@ const Input = styled.input`
   font-size: 28px;
   color: rgba(0, 0, 0, 0);
   caret-color: black;
+  border: none;
+  outline: none;
 `;
 
 const Validation = styled.p<{ color?: string }>`
